@@ -2,6 +2,7 @@ import React from 'react';
 import Radium from 'radium';
 
 import courses from '../data/courses';
+import Course from './Course';
 
 class Courses extends React.Component {
   constructor(props) {
@@ -20,9 +21,13 @@ class Courses extends React.Component {
       }
     };
     return (
-
+      <div style={styles.root}>
+        {
+          courses.map((course,i) => <Course key={i} course={course}/>)
+        }
+      </div>
     );
   }
 }
 
-export default Courses;
+export default Radium(Courses);
