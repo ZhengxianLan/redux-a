@@ -5,8 +5,6 @@ import Radium, {
   StyleRoot
 } from 'radium';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import Courses from './Courses';
-
 
 
 class Main extends Component {
@@ -41,7 +39,7 @@ class Main extends Component {
         <header style={styles.header}>
           <div style={styles.logo}>阿姨洗铁路</div>
         </header>
-        <Courses />
+        { this.props.children }
       </StyleRoot>
     );
   }
