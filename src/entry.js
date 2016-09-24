@@ -13,6 +13,7 @@ import {
 import Main from './components/Main';
 import Courses from './components/Courses';
 import ShowCourse from './components/ShowCourse';
+import css from './styles/style.css';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
