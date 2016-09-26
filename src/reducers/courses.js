@@ -1,5 +1,5 @@
-function courses(state=[],action){
-  console.log(state,action)
+function courses(state = [], action) {
+  console.log(state, action)
   return state;
 }
 
