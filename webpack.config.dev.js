@@ -9,8 +9,8 @@ module.exports = {
     'eventsource-polyfill',
     // listen to code updates emitted by hot middleware:
     'webpack-hot-middleware/client',
-  // your code:    new webpack.HotModuleReplacementPlugin(),
-    './src/entry'
+    // your code:    new webpack.HotModuleReplacementPlugin(),
+    './src/index'
   ],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -18,6 +18,7 @@ module.exports = {
     publicPath: '/dist/'
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ],
   module: {
