@@ -5,7 +5,7 @@ import {
   routerReducer
 } from 'react-router-redux';
 import courses from './courses';
-import comments fro, './comments';
+import comments from './comments';
 
 
 const rootReducer = combineReducers({

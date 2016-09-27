@@ -4,8 +4,7 @@ import {
 } from 'redux';
 import {
   syncHistoryWithStore
-}
-'react-router-redux';
+} from 'react-router-redux';
 import {
   browserHistory
 } from 'react-router';
