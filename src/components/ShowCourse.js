@@ -2,7 +2,6 @@ import React, {
   Component
 } from 'react';
 
-import courses from '../data/courses';
 import Course from './Course';
 
 
@@ -25,7 +24,7 @@ class ShowCourse extends Component {
     const {
       courseId
     } = this.props.params;
-    const selectedCourse = courses.filter((c) => c.id === courseId)[0];
+    const selectedCourse = this.props.courses.filter((c) => c.id === courseId)[0];
     return (
       <div style={styles.top}>
         <div style={styles.container}>

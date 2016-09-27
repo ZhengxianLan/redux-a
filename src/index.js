@@ -15,7 +15,7 @@ import {
 import store, {
   history
 } from './store';
-import Main from './components/Main';
+import App from './components/App';
 import Courses from './components/Courses';
 import ShowCourse from './components/ShowCourse';
 import css from './styles/style.css';
@@ -23,9 +23,9 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
 const router = (
-  <Provider>
+  <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={Main}>
+      <Route path="/" component={App}>
         <IndexRoute component={Courses}/>
         <Route path="/view/:courseId" component={ShowCourse} />
       </Route>

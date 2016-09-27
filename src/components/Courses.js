@@ -23,7 +23,7 @@ class Courses extends React.Component {
     return (
       <div style={styles.root}>
         {
-          courses.map((course,i) => <Course key={i} course={course}/>)
+          this.props.courses.map((course,i) => <Course key={i} course={course}/>)
         }
       </div>
     );
