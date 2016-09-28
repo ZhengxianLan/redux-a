@@ -14,20 +14,6 @@ import CSSTransitionGroup from 'react-addons-css-transition-group';
 
 class Course extends Component {
 
-  constructor(props) {
-
-    super(props);
-    this.state = {
-      likes: this.props.course.likes
-    }
-    this.increment = this.increment.bind(this);
-  }
-
-  increment() {
-    this.setState({
-      likes: this.state.likes + 1
-    })
-  }
 
   getStyles() {
     return {
@@ -57,14 +43,14 @@ class Course extends Component {
       <div style={ styles.root }>
       <Card>
         <div style={styles.imgWrap}>
-          <Link to={`view/${course.id}`}>
+          <Link to={`/view/${course.id}`}>
             <img src={course.image} alt={course.name} style={styles.img} />
           </Link>
           <CSSTransitionGroup transitionName='like' transitionEnterTimeout={500} transitionLeaveTimeout={500} >
-            <span key={this.state.likes} className='likes-heart'>{this.state.likes}</span>
+    <span key={course.likes} className='likes-heart'>{course.likes}</span>
           </CSSTransitionGroup>
          </div>
-         <CourseActions course={course} increment={this.increment} likes={this.state.likes}/>
+         <CourseActions course={course} increment={this.props.increment} />
         </Card>
       </div>
     );

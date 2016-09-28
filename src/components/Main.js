@@ -39,7 +39,13 @@ class Main extends Component {
         <header style={styles.header}>
           <div style={styles.logo}>阿姨洗铁路</div>
         </header>
-        {React.cloneElement(this.props.children,this.props )}
+        
+        {
+          /* 然而，Main 组件并不需要这些 state,dispatch,
+              那就传递给子组件
+           */
+          React.cloneElement(this.props.children,this.props )
+        }
       </StyleRoot>
     );
   }

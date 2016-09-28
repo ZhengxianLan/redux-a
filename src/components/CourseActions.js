@@ -76,9 +76,12 @@ class CourseActions extends Component {
       <div style={ styles.root }>
         <div style={ styles.name }>{ course.name }</div>
         <div style={ styles.btnWrap }>
-          <button style={ styles.button} onClick={this.props.increment} key='1'>
+          {/* 终于，把 increment 这个 actionCreatorDispatch 运送到了目的地 */ }
+          <button style={ styles.button} onClick={this.props.increment.bind(null,parseInt(course.id)-1)} key='1'>
            <ActionThumpUp style={ styles.icon } color='#4c5765'></ActionThumpUp>
-           <div>{this.props.likes}</div>
+           
+           {/* likes 数从传递过来的 course 读取 */}
+           <div>{course.likes}</div>
           </button>
           <Link style={ styles.a } to={`/views/${course.id}`}>
               <button style={ styles.button } key='2'>

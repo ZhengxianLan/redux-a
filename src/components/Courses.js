@@ -23,7 +23,10 @@ class Courses extends React.Component {
     return (
       <div style={styles.root}>
         {
-          this.props.courses.map((course,i) => <Course key={i} course={course}/>)
+          /* 将从 Main 组件获取到的 state 中的 courses 传递给 Course 子组件
+            并将从 Main 组件获取到的 increment 这个 actionCreatorDispatch 传递给 Course 子组件
+          */
+          this.props.courses.map((course,i) => <Course increment={this.props.increment} key={i} course={course}/>)
         }
       </div>
     );

@@ -28,7 +28,9 @@ class ShowCourse extends Component {
     return (
       <div style={styles.top}>
         <div style={styles.container}>
-          <Course course={selectedCourse}></Course>
+          {/* 和在Courses 中一样，我们把 increment 接力给 Course */}
+          <Course increment={this.props.increment} course={selectedCourse}></Course>
+        }
         </div>
       </div>
     );
