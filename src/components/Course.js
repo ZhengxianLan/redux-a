@@ -50,7 +50,7 @@ class Course extends Component {
     <span key={course.likes} className='likes-heart'>{course.likes}</span>
           </CSSTransitionGroup>
          </div>
-         <CourseActions course={course} increment={this.props.increment} />
+         <CourseActions comments={this.props.comments} course={course} increment={this.props.increment} />
         </Card>
       </div>
     );

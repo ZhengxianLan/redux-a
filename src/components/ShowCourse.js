@@ -3,6 +3,7 @@ import React, {
 } from 'react';
 
 import Course from './Course';
+import CommentBox from './CommentBox';
 
 
 class ShowCourse extends Component {
@@ -24,14 +25,16 @@ class ShowCourse extends Component {
     const {
       courseId
     } = this.props.params;
+    const comments = this.props.comments[courseId];
     const selectedCourse = this.props.courses.filter((c) => c.id === courseId)[0];
     return (
       <div style={styles.top}>
         <div style={styles.container}>
           {/* 和在Courses 中一样，我们把 increment 接力给 Course */}
-          <Course increment={this.props.increment} course={selectedCourse}></Course>
-        }
+          <Course comments={comments} increment={this.props.increment} course={selectedCourse}></Course>
+          }
         </div>
+        <CommentBox comments={comments} />
       </div>
     );
   }

@@ -83,10 +83,10 @@ class CourseActions extends Component {
            {/* likes 数从传递过来的 course 读取 */}
            <div>{course.likes}</div>
           </button>
-          <Link style={ styles.a } to={`/views/${course.id}`}>
+          <Link style={ styles.a } to={`/view/${course.id}`}>
               <button style={ styles.button } key='2'>
               <CommunicationComment style={ styles.icon}> </CommunicationComment>
-              <div>0</div>
+              <div>{[this.props.comments||[]].length}</div>
             </button>
           </Link>
         </div>
