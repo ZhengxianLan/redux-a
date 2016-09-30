@@ -24,6 +24,9 @@ if (module.hot) {
   });
 }
 
+const enhancers = compose(
+  window.devToolsExtension ? window.devToolsExtension() : f => f
+);
+const store = createStore(rootReducer, defaultState, enhancers);
 export const history = syncHistoryWithStore(browserHistory, store);
-const store = createStore(rootReducer, defaultState);
 export default store;
